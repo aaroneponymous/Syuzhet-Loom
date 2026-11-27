@@ -96,8 +96,27 @@ const summary: Record<string, number> = {
 // no absolute local path is written into generated files.
 const rel = relative(REPO_DIR, SRC);
 const folder = rel.startsWith('..') ? SRC.split(/[\\/]/).pop()! : rel.split('\\').join('/');
+
+const sourcesJsonPath = join(REPO_DIR, 'src/model/generated/sources.json');
+let extractedAt = new Date().toISOString();
+if (existsSync(sourcesJsonPath)) {
+  try {
+    const prev = JSON.parse(readFileSync(sourcesJsonPath, 'utf8'));
+    const prevFiles = prev?.record?.archive?.files;
+    const sameFiles =
+      Array.isArray(prevFiles) &&
+      prevFiles.length === versions.length &&
+      versions.every((v, i) => v.file === prevFiles[i]?.file && v.sha256 === prevFiles[i]?.sha256 && v.bytes === prevFiles[i]?.bytes);
+    if (sameFiles && prev?.record?.extractedAt) {
+      extractedAt = prev.record.extractedAt;
+    }
+  } catch {
+    // Keep new timestamp on parse failure
+  }
+}
+
 const record = {
-  extractedAt: new Date().toISOString(),
+  extractedAt,
   journeys,
   archive: { folder: `${folder}/`, files: versions },
   summary,
