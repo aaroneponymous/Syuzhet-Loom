@@ -1,0 +1,841 @@
+{
+  "version": 1,
+  "scope": "the Booking hold component",
+  "status": "Example data for the bundled meeting-room model. It records what the example handoff, design return and source documents say about one component; it approves, implements and verifies nothing.",
+  "baseline": {
+    "modelCommit": "2ac20f1ad78af4bcc7a4f217bf530096b2ed2ca1"
+  },
+  "revisions": [
+    {
+      "id": "rev-model-baseline",
+      "source": "model",
+      "version": "2ac20f1ad78af4bcc7a4f217bf530096b2ed2ca1",
+      "checkedAt": "2026-11-27",
+      "how": "git commit of this repository that holds src/model as traced"
+    },
+    {
+      "id": "rev-spec-decisions",
+      "source": "archive",
+      "version": "DECISION_REGISTER.md version 2",
+      "hash": "e510ffad1f88220aecda31625c264d1355d48c23466c82b6e8bbaed2666e857a",
+      "checkedAt": "2026-11-27",
+      "how": "SHA-256 of the file"
+    },
+    {
+      "id": "rev-spec-follow-ups",
+      "source": "archive",
+      "version": "ARCHITECTURE_FOLLOW_UPS.md",
+      "hash": "72452113465d899cd1e552f88e6725e533327d0eaa14ee106a4844d7c719f110",
+      "checkedAt": "2026-11-27",
+      "how": "SHA-256 of the file"
+    },
+    {
+      "id": "rev-spec-j01",
+      "source": "archive",
+      "version": "J01 version 2",
+      "hash": "8bf652fdd34d714a3d65cd3a42f8cebaf0ef9ae5c39fad69986494ac2477bc71",
+      "checkedAt": "2026-11-27",
+      "how": "SHA-256 of spec/journeys/J01-book-a-room.md"
+    },
+    {
+      "id": "rev-handoff-v1",
+      "source": "handoff",
+      "version": "v1 SCREEN_SPEC.md",
+      "hash": "c447bd25e20ef760b01b7a476a39187952136df909aa9cdb81cf9673aa9dd360",
+      "checkedAt": "2026-11-27",
+      "how": "SHA-256 of the file"
+    },
+    {
+      "id": "rev-handoff-v1-workflows",
+      "source": "handoff",
+      "version": "v1 WORKFLOWS.md",
+      "hash": "4d6d96bdbfd0530925469800387709d354c78c334c76c46af963ecf4da49f033",
+      "checkedAt": "2026-11-27",
+      "how": "SHA-256 of the file"
+    },
+    {
+      "id": "rev-design-v1",
+      "source": "design",
+      "version": "design/v1 DESIGN_MAP.md",
+      "hash": "14ff6fb5d9fc763251d0212e03c101383dd427512e3fa43bb78f8b4d3a646740",
+      "checkedAt": "2026-11-27",
+      "how": "SHA-256 of the file"
+    }
+  ],
+  "records": [
+    {
+      "ref": "J01",
+      "title": "J01 Book a room: review",
+      "rev": "rev-spec-j01",
+      "appliesTo": [
+        "model:booking-hold"
+      ],
+      "statuses": [
+        {
+          "kind": "product-approval",
+          "value": "Not started",
+          "heldIn": "spec/journeys/J01-book-a-room.md, row \"Review status\"",
+          "quote": "| **Review status** | Not started |",
+          "checkIn": "spec/journeys/J01-book-a-room.md"
+        }
+      ]
+    },
+    {
+      "ref": "handoff:room-booking/v1#SR-02",
+      "title": "Placing hold",
+      "rev": "rev-handoff-v1",
+      "statuses": [
+        {
+          "kind": "product-class",
+          "value": "derived",
+          "heldIn": "handoffs/room-booking/v1/SCREEN_SPEC.md, column \"Class\"",
+          "quote": "| derived |",
+          "checkIn": "row"
+        }
+      ]
+    },
+    {
+      "ref": "handoff:room-booking/v1#SR-03",
+      "title": "Details step",
+      "rev": "rev-handoff-v1",
+      "statuses": [
+        {
+          "kind": "product-class",
+          "value": "confirmed",
+          "heldIn": "handoffs/room-booking/v1/SCREEN_SPEC.md, column \"Class\"",
+          "quote": "| confirmed |",
+          "checkIn": "row"
+        }
+      ]
+    },
+    {
+      "ref": "handoff:room-booking/v1#SR-04",
+      "title": "Booking confirmed",
+      "rev": "rev-handoff-v1",
+      "statuses": [
+        {
+          "kind": "product-class",
+          "value": "confirmed",
+          "heldIn": "handoffs/room-booking/v1/SCREEN_SPEC.md, column \"Class\"",
+          "quote": "| confirmed |",
+          "checkIn": "row"
+        }
+      ]
+    },
+    {
+      "ref": "handoff:room-booking/v1#IX-03",
+      "title": "Hold placed",
+      "rev": "rev-handoff-v1",
+      "statuses": [
+        {
+          "kind": "product-class",
+          "value": "confirmed",
+          "heldIn": "handoffs/room-booking/v1/SCREEN_SPEC.md, column \"Class\"",
+          "quote": "| confirmed |",
+          "checkIn": "row"
+        }
+      ]
+    },
+    {
+      "ref": "handoff:room-booking/v1#IX-04",
+      "title": "Room just taken",
+      "rev": "rev-handoff-v1",
+      "statuses": [
+        {
+          "kind": "product-class",
+          "value": "confirmed",
+          "heldIn": "handoffs/room-booking/v1/SCREEN_SPEC.md, column \"Class\"",
+          "quote": "| confirmed |",
+          "checkIn": "row"
+        }
+      ]
+    },
+    {
+      "ref": "handoff:room-booking/v1#IX-05",
+      "title": "Confirm",
+      "rev": "rev-handoff-v1",
+      "statuses": [
+        {
+          "kind": "product-class",
+          "value": "confirmed",
+          "heldIn": "handoffs/room-booking/v1/SCREEN_SPEC.md, column \"Class\"",
+          "quote": "| confirmed |",
+          "checkIn": "row"
+        }
+      ]
+    },
+    {
+      "ref": "handoff:room-booking/v1#IX-06",
+      "title": "Hold runs out",
+      "rev": "rev-handoff-v1",
+      "statuses": [
+        {
+          "kind": "product-class",
+          "value": "confirmed",
+          "heldIn": "handoffs/room-booking/v1/SCREEN_SPEC.md, column \"Class\"",
+          "quote": "| confirmed |",
+          "checkIn": "row"
+        }
+      ]
+    },
+    {
+      "ref": "handoff:room-booking/v1#IX-07",
+      "title": "Try again",
+      "rev": "rev-handoff-v1",
+      "statuses": [
+        {
+          "kind": "product-class",
+          "value": "open",
+          "heldIn": "handoffs/room-booking/v1/SCREEN_SPEC.md, column \"Class\"",
+          "quote": "| open |",
+          "checkIn": "row"
+        }
+      ]
+    },
+    {
+      "ref": "design-map:room-booking/v1#SR-02",
+      "title": "Room list, row in progress",
+      "rev": "rev-design-v1",
+      "statuses": [
+        {
+          "kind": "design-coverage",
+          "value": "designed",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md, column \"Coverage\"",
+          "quote": "| designed |",
+          "checkIn": "row"
+        },
+        {
+          "kind": "design-acceptance",
+          "value": "not accepted",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md",
+          "quote": "Acceptance: not accepted",
+          "checkIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md"
+        }
+      ]
+    },
+    {
+      "ref": "design-map:room-booking/v1#SR-03",
+      "title": "Details sheet",
+      "rev": "rev-design-v1",
+      "statuses": [
+        {
+          "kind": "design-coverage",
+          "value": "designed",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md, column \"Coverage\"",
+          "quote": "| designed |",
+          "checkIn": "row"
+        },
+        {
+          "kind": "design-acceptance",
+          "value": "not accepted",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md",
+          "quote": "Acceptance: not accepted",
+          "checkIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md"
+        }
+      ]
+    },
+    {
+      "ref": "design-map:room-booking/v1#SR-04",
+      "title": "Confirmation sheet",
+      "rev": "rev-design-v1",
+      "statuses": [
+        {
+          "kind": "design-coverage",
+          "value": "designed",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md, column \"Coverage\"",
+          "quote": "| designed |",
+          "checkIn": "row"
+        },
+        {
+          "kind": "design-acceptance",
+          "value": "not accepted",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md",
+          "quote": "Acceptance: not accepted",
+          "checkIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md"
+        }
+      ]
+    },
+    {
+      "ref": "design-map:room-booking/v1#IX-03",
+      "title": "Details sheet",
+      "rev": "rev-design-v1",
+      "statuses": [
+        {
+          "kind": "design-coverage",
+          "value": "designed",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md, column \"Coverage\"",
+          "quote": "| designed |",
+          "checkIn": "row"
+        },
+        {
+          "kind": "design-acceptance",
+          "value": "not accepted",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md",
+          "quote": "Acceptance: not accepted",
+          "checkIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md"
+        }
+      ]
+    },
+    {
+      "ref": "design-map:room-booking/v1#IX-04",
+      "title": "Room list, banner",
+      "rev": "rev-design-v1",
+      "statuses": [
+        {
+          "kind": "design-coverage",
+          "value": "designed",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md, column \"Coverage\"",
+          "quote": "| designed |",
+          "checkIn": "row"
+        },
+        {
+          "kind": "design-acceptance",
+          "value": "not accepted",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md",
+          "quote": "Acceptance: not accepted",
+          "checkIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md"
+        }
+      ]
+    },
+    {
+      "ref": "design-map:room-booking/v1#IX-05",
+      "title": "Details sheet",
+      "rev": "rev-design-v1",
+      "statuses": [
+        {
+          "kind": "design-coverage",
+          "value": "designed",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md, column \"Coverage\"",
+          "quote": "| designed |",
+          "checkIn": "row"
+        },
+        {
+          "kind": "design-acceptance",
+          "value": "not accepted",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md",
+          "quote": "Acceptance: not accepted",
+          "checkIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md"
+        }
+      ]
+    },
+    {
+      "ref": "design-map:room-booking/v1#IX-06",
+      "title": "Room list, banner",
+      "rev": "rev-design-v1",
+      "statuses": [
+        {
+          "kind": "design-coverage",
+          "value": "designed",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md, column \"Coverage\"",
+          "quote": "| designed |",
+          "checkIn": "row"
+        },
+        {
+          "kind": "design-acceptance",
+          "value": "not accepted",
+          "heldIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md",
+          "quote": "Acceptance: not accepted",
+          "checkIn": "handoffs/room-booking/design/v1/DESIGN_MAP.md"
+        }
+      ]
+    },
+    {
+      "ref": "AF-01",
+      "title": "One place decides holds and bookings",
+      "rev": "rev-spec-follow-ups",
+      "statuses": [
+        {
+          "kind": "follow-up",
+          "value": "open",
+          "heldIn": "spec/ARCHITECTURE_FOLLOW_UPS.md, column \"Status\"",
+          "quote": "Status: open",
+          "checkIn": "row"
+        }
+      ]
+    },
+    {
+      "ref": "AF-02",
+      "title": "Confirming is safe to repeat",
+      "rev": "rev-spec-follow-ups",
+      "statuses": [
+        {
+          "kind": "follow-up",
+          "value": "open",
+          "heldIn": "spec/ARCHITECTURE_FOLLOW_UPS.md, column \"Status\"",
+          "quote": "Status: open",
+          "checkIn": "row"
+        }
+      ]
+    },
+    {
+      "ref": "AF-03",
+      "title": "Expiry runs on the service clock",
+      "rev": "rev-spec-follow-ups",
+      "statuses": [
+        {
+          "kind": "follow-up",
+          "value": "open",
+          "heldIn": "spec/ARCHITECTURE_FOLLOW_UPS.md, column \"Status\"",
+          "quote": "Status: open",
+          "checkIn": "row"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "id": "L-001",
+      "type": "refines",
+      "basis": "stated",
+      "from": {
+        "ref": "handoff:room-booking/v1#SR-02",
+        "rev": "rev-handoff-v1"
+      },
+      "to": {
+        "ref": "model:booking-hold/placing",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:9c6caf77a92d82c53a6cb0525df465344e17605871d5e66c3cb203b744947352"
+      }
+    },
+    {
+      "id": "L-002",
+      "type": "refines",
+      "basis": "stated",
+      "from": {
+        "ref": "handoff:room-booking/v1#SR-03",
+        "rev": "rev-handoff-v1"
+      },
+      "to": {
+        "ref": "model:booking-hold/held",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:c4c6fa47adeb35bf82617edebf4c4e8ecd1bcfdbb4e58a60293d5c7181a11f22"
+      }
+    },
+    {
+      "id": "L-003",
+      "type": "refines",
+      "basis": "stated",
+      "from": {
+        "ref": "handoff:room-booking/v1#SR-04",
+        "rev": "rev-handoff-v1"
+      },
+      "to": {
+        "ref": "model:booking-hold/booked",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:fec8429101f881445615b899de251986b3428f03e3ced26f45a099f082c187d3"
+      }
+    },
+    {
+      "id": "L-004",
+      "type": "refines",
+      "basis": "stated",
+      "from": {
+        "ref": "handoff:room-booking/v1#IX-03",
+        "rev": "rev-handoff-v1"
+      },
+      "to": {
+        "ref": "model:booking-hold/placing__held",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:290ae9a6a10c56ec364f544f9f8a4ea514f3f2462701607ed8ab476da815a5d4"
+      }
+    },
+    {
+      "id": "L-005",
+      "type": "refines",
+      "basis": "stated",
+      "from": {
+        "ref": "handoff:room-booking/v1#IX-04",
+        "rev": "rev-handoff-v1"
+      },
+      "to": {
+        "ref": "model:booking-hold/placing__lost",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:b094884e07898ee937bbc101af1862f1599db2c7f410f792b00e7499fee77deb"
+      }
+    },
+    {
+      "id": "L-006",
+      "type": "refines",
+      "basis": "stated",
+      "from": {
+        "ref": "handoff:room-booking/v1#IX-05",
+        "rev": "rev-handoff-v1"
+      },
+      "to": {
+        "ref": "model:booking-hold/held__confirming",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:f7528df0567c171ba0a163de41774c6879e267afa2f3c003d80c6af9bb978dbf"
+      }
+    },
+    {
+      "id": "L-007",
+      "type": "refines",
+      "basis": "stated",
+      "from": {
+        "ref": "handoff:room-booking/v1#IX-06",
+        "rev": "rev-handoff-v1"
+      },
+      "to": {
+        "ref": "model:booking-hold/held__expired",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:385f0c7b91bd8c1dd49031c710bc01f97c3d881793cb1579be4fe98d55de30ff"
+      }
+    },
+    {
+      "id": "L-008",
+      "type": "refines",
+      "basis": "interpretation",
+      "from": {
+        "ref": "handoff:room-booking/v1#IX-07",
+        "rev": "rev-handoff-v1"
+      },
+      "to": {
+        "ref": "model:booking-hold/confirming__held",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:8c3a6ee6dfe5daea2dfd02fe4b2a9051c6722de62ea07bc82ba1388fed2d17dd"
+      },
+      "note": "IX-07 names no model element. It is read as detailing \"Confirming failed\" because it speaks of a failed confirmation with the hold still in place; it says nothing about the no-answer paths (Q-01)."
+    },
+    {
+      "id": "L-009",
+      "type": "designs",
+      "basis": "stated",
+      "from": {
+        "ref": "design-map:room-booking/v1#SR-02",
+        "rev": "rev-design-v1"
+      },
+      "to": {
+        "ref": "handoff:room-booking/v1#SR-02",
+        "rev": "rev-handoff-v1"
+      }
+    },
+    {
+      "id": "L-010",
+      "type": "designs",
+      "basis": "stated",
+      "from": {
+        "ref": "design-map:room-booking/v1#SR-03",
+        "rev": "rev-design-v1"
+      },
+      "to": {
+        "ref": "handoff:room-booking/v1#SR-03",
+        "rev": "rev-handoff-v1"
+      }
+    },
+    {
+      "id": "L-011",
+      "type": "designs",
+      "basis": "stated",
+      "from": {
+        "ref": "design-map:room-booking/v1#SR-04",
+        "rev": "rev-design-v1"
+      },
+      "to": {
+        "ref": "handoff:room-booking/v1#SR-04",
+        "rev": "rev-handoff-v1"
+      }
+    },
+    {
+      "id": "L-012",
+      "type": "designs",
+      "basis": "stated",
+      "from": {
+        "ref": "design-map:room-booking/v1#IX-03",
+        "rev": "rev-design-v1"
+      },
+      "to": {
+        "ref": "handoff:room-booking/v1#IX-03",
+        "rev": "rev-handoff-v1"
+      }
+    },
+    {
+      "id": "L-013",
+      "type": "designs",
+      "basis": "stated",
+      "from": {
+        "ref": "design-map:room-booking/v1#IX-04",
+        "rev": "rev-design-v1"
+      },
+      "to": {
+        "ref": "handoff:room-booking/v1#IX-04",
+        "rev": "rev-handoff-v1"
+      }
+    },
+    {
+      "id": "L-014",
+      "type": "designs",
+      "basis": "stated",
+      "from": {
+        "ref": "design-map:room-booking/v1#IX-05",
+        "rev": "rev-design-v1"
+      },
+      "to": {
+        "ref": "handoff:room-booking/v1#IX-05",
+        "rev": "rev-handoff-v1"
+      }
+    },
+    {
+      "id": "L-015",
+      "type": "designs",
+      "basis": "stated",
+      "from": {
+        "ref": "design-map:room-booking/v1#IX-06",
+        "rev": "rev-design-v1"
+      },
+      "to": {
+        "ref": "handoff:room-booking/v1#IX-06",
+        "rev": "rev-handoff-v1"
+      }
+    },
+    {
+      "id": "L-016",
+      "type": "allocates-to",
+      "basis": "derived",
+      "from": {
+        "ref": "model:booking-hold/placing__lost",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:b094884e07898ee937bbc101af1862f1599db2c7f410f792b00e7499fee77deb"
+      },
+      "to": {
+        "ref": "AF-01",
+        "rev": "rev-spec-follow-ups"
+      },
+      "sharedRefs": [
+        "D-07",
+        "D-09"
+      ]
+    },
+    {
+      "id": "L-017",
+      "type": "allocates-to",
+      "basis": "derived",
+      "from": {
+        "ref": "model:booking-hold/confirming__booked",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:f462fe32b232eec23a2f92bcd61473ce5d6b6db7f92b1ffe9ac95eb7a72298a5"
+      },
+      "to": {
+        "ref": "AF-02",
+        "rev": "rev-spec-follow-ups"
+      },
+      "sharedRefs": [
+        "D-02",
+        "D-10"
+      ]
+    },
+    {
+      "id": "L-018",
+      "type": "allocates-to",
+      "basis": "derived",
+      "from": {
+        "ref": "model:booking-hold/held__expired",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:385f0c7b91bd8c1dd49031c710bc01f97c3d881793cb1579be4fe98d55de30ff"
+      },
+      "to": {
+        "ref": "AF-03",
+        "rev": "rev-spec-follow-ups"
+      },
+      "sharedRefs": [
+        "D-08"
+      ]
+    },
+    {
+      "id": "L-019",
+      "type": "covers",
+      "basis": "stated",
+      "from": {
+        "ref": "handoff:room-booking/v1#SCN-01",
+        "rev": "rev-handoff-v1-workflows"
+      },
+      "to": {
+        "ref": "model:booking-hold/held__confirming",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:f7528df0567c171ba0a163de41774c6879e267afa2f3c003d80c6af9bb978dbf"
+      }
+    },
+    {
+      "id": "L-020",
+      "type": "covers",
+      "basis": "stated",
+      "from": {
+        "ref": "handoff:room-booking/v1#SCN-01",
+        "rev": "rev-handoff-v1-workflows"
+      },
+      "to": {
+        "ref": "model:booking-hold/confirming__booked",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:f462fe32b232eec23a2f92bcd61473ce5d6b6db7f92b1ffe9ac95eb7a72298a5"
+      }
+    },
+    {
+      "id": "L-021",
+      "type": "covers",
+      "basis": "stated",
+      "from": {
+        "ref": "handoff:room-booking/v1#SCN-02",
+        "rev": "rev-handoff-v1-workflows"
+      },
+      "to": {
+        "ref": "model:booking-hold/held__expired",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:385f0c7b91bd8c1dd49031c710bc01f97c3d881793cb1579be4fe98d55de30ff"
+      }
+    },
+    {
+      "id": "L-022",
+      "type": "covers",
+      "basis": "stated",
+      "from": {
+        "ref": "handoff:room-booking/v1#SCN-03",
+        "rev": "rev-handoff-v1-workflows"
+      },
+      "to": {
+        "ref": "model:booking-hold/placing__lost",
+        "rev": "rev-model-baseline",
+        "elementHash": "sha256:b094884e07898ee937bbc101af1862f1599db2c7f410f792b00e7499fee77deb"
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "id": "G-01",
+      "anchor": "model:booking-hold",
+      "expected": {
+        "layer": "implementation",
+        "relationship": "implements"
+      },
+      "kind": "out-of-scope",
+      "reason": "The example has no code. Nothing implements this component, and no code elsewhere is offered as evidence."
+    },
+    {
+      "id": "G-02",
+      "anchor": "handoff:room-booking/v1#IX-07",
+      "expected": {
+        "layer": "design",
+        "relationship": "designs",
+        "endpoint": "design-map"
+      },
+      "kind": "checked-absent",
+      "reason": "IX-07 has no row in the design map. The map says it was held back until Q-01 is answered.",
+      "checked": {
+        "source": "handoffs/room-booking/design/v1/DESIGN_MAP.md",
+        "rev": "rev-design-v1"
+      }
+    },
+    {
+      "id": "G-03",
+      "anchor": "model:booking-hold/confirming__expired",
+      "expected": {
+        "layer": "verification",
+        "relationship": "covers"
+      },
+      "kind": "checked-absent",
+      "reason": "No scenario reaches this path: none of SCN-01 to SCN-03 names it, and no model scenario steps through it.",
+      "checked": {
+        "source": "handoffs/room-booking/v1/WORKFLOWS.md and src/model/scenarios.ts",
+        "rev": "rev-handoff-v1-workflows"
+      }
+    },
+    {
+      "id": "G-04",
+      "anchor": "model:booking-hold",
+      "expected": {
+        "layer": "design",
+        "relationship": "designs",
+        "endpoint": "figma"
+      },
+      "kind": "out-of-scope",
+      "reason": "The example design map names surfaces only. There is no design file, so no frame is linked."
+    },
+    {
+      "id": "G-05",
+      "anchor": "model:booking-hold",
+      "expected": {
+        "layer": "research",
+        "relationship": "records"
+      },
+      "kind": "out-of-scope",
+      "reason": "No research is recorded for the example."
+    }
+  ],
+  "scenarios": [
+    {
+      "ref": "handoff:room-booking/v1#SCN-01",
+      "title": "Booked in one go",
+      "rev": "rev-handoff-v1-workflows"
+    },
+    {
+      "ref": "handoff:room-booking/v1#SCN-02",
+      "title": "The hold runs out",
+      "rev": "rev-handoff-v1-workflows"
+    },
+    {
+      "ref": "handoff:room-booking/v1#SCN-03",
+      "title": "Beaten to the room",
+      "rev": "rev-handoff-v1-workflows"
+    }
+  ],
+  "tests": [],
+  "runs": [],
+  "findings": [
+    {
+      "id": "XLF-01",
+      "title": "Nothing says what the person sees when no answer comes back after confirming",
+      "targets": [
+        "model:booking-hold/confirming__held-unknown",
+        "model:booking-hold/confirming__expired"
+      ],
+      "component": "model:booking-hold",
+      "kind": "unstated",
+      "what": "The model draws two alternatives for a confirmation with no answer (Q-01). Handoff v1 covers only a clear failure (IX-07), the design map holds IX-07 back, and no scenario reaches either alternative.",
+      "consequence": "Whatever is built will pick one of the two by accident. If the hold is silently given up, a person who was in fact booked may book a second room.",
+      "scenarios": [
+        "model-scenario:S03"
+      ],
+      "at": [
+        "rev-model-baseline",
+        "rev-handoff-v1",
+        "rev-design-v1"
+      ],
+      "status": "open",
+      "loggedBy": "example author",
+      "loggedAt": "2026-11-27"
+    },
+    {
+      "id": "XLF-02",
+      "title": "A screen is specified on a state the model marks as its own interpretation",
+      "targets": [
+        "model:booking-hold/placing",
+        "handoff:room-booking/v1#SR-02"
+      ],
+      "component": "model:booking-hold",
+      "kind": "interpretation-unconfirmed",
+      "what": "The model adds \"Placing hold\" as an interpretation: the source documents treat placing a hold as instant. SR-02 (class: derived) asks for a waiting state on it, and the design map shows it as designed.",
+      "consequence": "A requirement and a design now rest on a reading nobody has confirmed. If holds are in fact instant, SR-02 and its design are unnecessary.",
+      "scenarios": [
+        "model-scenario:S02"
+      ],
+      "at": [
+        "rev-model-baseline",
+        "rev-handoff-v1"
+      ],
+      "status": "open",
+      "loggedBy": "example author",
+      "loggedAt": "2026-11-27"
+    }
+  ],
+  "workItems": [
+    {
+      "id": "WI-01",
+      "findings": [
+        "XLF-01"
+      ],
+      "system": "issue-tracker",
+      "state": "draft",
+      "dedupeKey": "xlf-01:no-answer-after-confirm",
+      "title": "Decide Q-01: is the hold kept when confirming gets no answer?",
+      "body": "The Booking hold model draws two alternatives for a confirmation that gets no answer: (a) the hold is kept until its period ends, (b) the hold is given up.\n\nHandoff room-booking v1 covers only a clear failure (IX-07). Design v1 holds IX-07 back (finding F-02). No scenario reaches either path.\n\nNeeded: a decision on Q-01, then a handoff row and a scenario for the no-answer case.\n\nSources: Q-01, D-08, D-10, AC-J01-11; model:booking-hold/confirming__held-unknown, model:booking-hold/confirming__expired; finding XLF-01."
+    }
+  ]
+}
