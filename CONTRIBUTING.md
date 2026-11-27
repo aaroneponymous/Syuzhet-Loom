@@ -8,7 +8,7 @@ Needs Node.js 20 or newer.
 
 ```bash
 git clone <your fork>
-cd syuzhet-loom
+cd Syuzhet-Loom
 npm ci
 npm test          # model validation, trace validation, self-tests, type-check
 npm run dev       # viewer at http://localhost:5173

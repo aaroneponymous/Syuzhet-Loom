@@ -5,11 +5,11 @@
   "description": "Behavioral modeling and revision-pinned traceability for reliable agentic software engineering.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aaroneponymous/syuzhet-loom.git"
+    "url": "git+https://github.com/aaroneponymous/Syuzhet-Loom.git"
   },
-  "homepage": "https://github.com/aaroneponymous/syuzhet-loom#readme",
+  "homepage": "https://github.com/aaroneponymous/Syuzhet-Loom#readme",
   "bugs": {
-    "url": "https://github.com/aaroneponymous/syuzhet-loom/issues"
+    "url": "https://github.com/aaroneponymous/Syuzhet-Loom/issues"
   },
   "type": "module",
   "scripts": {

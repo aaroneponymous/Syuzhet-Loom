@@ -184,7 +184,7 @@ export function HelpModal({ onClose }: { onClose: () => void }) {
           </div>
         </details>
         <p className="muted" data-testid="help-product">
-          Drawn with Syuzhet Loom. <i>Structure precedes execution.</i>
+          Drawn with Syuzhet Loom. <i>From Intent to Implementation.</i>
         </p>
       </div>
     </div>

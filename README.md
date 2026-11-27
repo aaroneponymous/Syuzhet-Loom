@@ -1,6 +1,13 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/brand/syuzhet-loom-logo-dark.svg">
+    <img alt="Syuzhet Loom. From Intent to Implementation." src="docs/brand/syuzhet-loom-logo-light.svg" width="460">
+  </picture>
+</p>
+
 # Syuzhet Loom
 
-*Structure precedes execution.*
+*From Intent to Implementation.*
 
 **Behavioural modelling and traceability infrastructure for agentic software engineering.**
 
@@ -40,8 +47,8 @@ Syuzhet Loom does not replace the specification, the tracker or the design tool.
 Needs Node.js 20 or newer and git. No account, credentials or network access after installation.
 
 ```bash
-git clone https://github.com/aaroneponymous/syuzhet-loom.git
-cd syuzhet-loom
+git clone https://github.com/aaroneponymous/Syuzhet-Loom.git
+cd Syuzhet-Loom
 npm ci
 npm test            # validates the example model and trace, runs the self-tests, type-checks
 npm run dev         # viewer at http://localhost:5173
