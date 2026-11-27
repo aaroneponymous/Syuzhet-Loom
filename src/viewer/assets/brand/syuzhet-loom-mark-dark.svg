@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Syuzhet Loom">
+<title>Syuzhet Loom</title>
+<path d="M10 36C24 36 24 12 38 12" pathLength="100" fill="none" stroke="#ecebe6" stroke-width="4.5" stroke-dasharray="40 20 40"/>
+<path d="M10 12C24 12 24 36 38 36" fill="none" stroke="#8f98f7" stroke-width="4.5"/>
+<circle cx="10" cy="36" r="6" fill="#ecebe6"/>
+<circle cx="38" cy="12" r="6" fill="#ecebe6"/>
+<circle cx="10" cy="12" r="6" fill="#8f98f7"/>
+<circle cx="38" cy="36" r="6" fill="#8f98f7"/>
+</svg>

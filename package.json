@@ -1,0 +1,45 @@
+{
+  "name": "syuzhet-loom",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Behavioral modeling and revision-pinned traceability for reliable agentic software engineering.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaroneponymous/syuzhet-loom.git"
+  },
+  "homepage": "https://github.com/aaroneponymous/syuzhet-loom#readme",
+  "bugs": {
+    "url": "https://github.com/aaroneponymous/syuzhet-loom/issues"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run validate && npm run validate:trace && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "validate": "tsx scripts/validate.ts",
+    "validate:trace": "tsx scripts/validate-trace.ts",
+    "test:trace": "tsx scripts/trace-selftest.ts",
+    "test:staleness": "tsx scripts/trace-staleness-selftest.ts",
+    "test": "npm run validate && npm run validate:trace && npm run test:trace && npm run test:staleness && tsc --noEmit",
+    "trace-staleness": "tsx scripts/trace-staleness.ts",
+    "trace:repin": "tsx scripts/trace-repin.ts",
+    "coverage": "tsx scripts/coverage.ts",
+    "extract-sources": "tsx scripts/extract-sources.ts"
+  },
+  "dependencies": {
+    "@dagrejs/dagre": "^1.1.4",
+    "@xyflow/react": "^12.3.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vite": "^6.4.6"
+  },
+  "license": "Apache-2.0"
+}

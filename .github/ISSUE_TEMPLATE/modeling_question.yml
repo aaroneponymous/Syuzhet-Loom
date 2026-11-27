@@ -1,0 +1,15 @@
+name: Modelling question
+description: How to express something in a Syuzhet Loom model or trace
+labels: [question]
+body:
+  - type: textarea
+    id: behaviour
+    attributes:
+      label: The behaviour you want to model
+      description: In plain words. Remove anything confidential.
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What you tried

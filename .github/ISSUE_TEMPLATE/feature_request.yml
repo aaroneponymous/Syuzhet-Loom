@@ -1,0 +1,23 @@
+name: Feature request
+description: Propose a capability or a change to the schema, trace or viewer
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The situation, not the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Design constraints (see CONTRIBUTING.md)
+      options:
+        - label: It does not resolve undecided behaviour by guessing
+        - label: It does not silently re-point pinned references
+        - label: It does not infer one status from another

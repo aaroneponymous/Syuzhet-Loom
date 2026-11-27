@@ -1,0 +1,30 @@
+name: Bug report
+description: Something in the validator, trace tools, staleness report or viewer is wrong
+labels: [bug]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [Model validation, Coverage, Trace validation, Staleness report, Viewer, Response log, Documentation, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: The smallest model or trace fragment that shows it, and the command you ran. Remove anything confidential first.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Syuzhet Loom version or commit, Node version, OS
+    validations:
+      required: true

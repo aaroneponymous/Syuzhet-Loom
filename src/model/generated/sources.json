@@ -1,0 +1,382 @@
+{
+ "refs": {
+  "D-01": {
+   "kind": "Decision",
+   "text": "A booking is for one room and one continuous period on one day.",
+   "why": "Keeps \"is the room free?\" a question with one answer."
+  },
+  "D-02": {
+   "kind": "Decision",
+   "text": "A room holds at most one booking at any moment. Bookings never overlap.",
+   "why": "This is the promise the whole product rests on."
+  },
+  "D-03": {
+   "kind": "Decision",
+   "text": "Anyone in the office directory can book any room. There is no approval step.",
+   "why": "Booking has to be quicker than walking the corridor to look."
+  },
+  "D-04": {
+   "kind": "Decision",
+   "text": "A search asks for the date, the start time, the length and the number of people. Only rooms that are large enough and free for the whole period are listed.",
+   "why": "People should never pick a room they cannot have."
+  },
+  "D-05": {
+   "kind": "Decision",
+   "text": "When no room matches, the person is told \"Nothing free\" and can change what they asked for. This is an ordinary result, not an error.",
+   "why": "A full office is not a fault."
+  },
+  "D-06": {
+   "kind": "Decision",
+   "text": "Picking a room places a hold on that room and period before any details are asked for.",
+   "why": "Typing a title must not cost someone the room."
+  },
+  "D-07": {
+   "kind": "Decision",
+   "text": "A hold belongs to one person and keeps the room and period from everyone else while it lasts.",
+   "why": "Two people must never both believe they have the room."
+  },
+  "D-08": {
+   "kind": "Decision",
+   "text": "A hold that is not confirmed ends by itself when the hold period (PN-01) has passed.",
+   "why": "Abandoned holds must not block rooms."
+  },
+  "D-09": {
+   "kind": "Decision",
+   "text": "If someone else takes the room before the hold can be placed, the person goes back to the list of rooms, brought up to date, and is told why.",
+   "why": "Losing a race should cost one tap, not a new search."
+  },
+  "D-10": {
+   "kind": "Decision",
+   "text": "A booking exists only once the person confirms. A hold is never shown to anyone as a booking.",
+   "why": "Colleagues plan around bookings; they must be real."
+  },
+  "D-11": {
+   "kind": "Decision",
+   "text": "Backing out before confirming releases the hold at once.",
+   "why": "The room should be free again the moment it is not wanted."
+  },
+  "D-12": {
+   "kind": "Decision",
+   "text": "The organiser can move a booking to another time or room. The original room and period stay booked until the new ones are confirmed.",
+   "why": "Nobody should lose a room by trying for a better one."
+  },
+  "D-13": {
+   "kind": "Decision",
+   "text": "The organiser can cancel a booking that has not started. The room is free again at once.",
+   "why": "Unused rooms are the main complaint."
+  },
+  "D-14": {
+   "kind": "Decision",
+   "text": "Cancelling asks for confirmation and names the meeting.",
+   "why": "A cancelled meeting cannot be brought back if the room is taken."
+  },
+  "D-15": {
+   "kind": "Decision",
+   "text": "Check-in opens a short time before the start (PN-02) and can be done at the room or from the booking.",
+   "why": "It shows the room is really going to be used."
+  },
+  "D-16": {
+   "kind": "Decision",
+   "text": "A booking that is not checked in by the end of the grace period (PN-03) is released, and the room is free for the rest of the period.",
+   "why": "No-shows waste the scarcest rooms."
+  },
+  "D-17": {
+   "kind": "Decision",
+   "text": "The organiser is told when their booking has been released for not checking in.",
+   "why": "A release must never be a surprise found at the door."
+  },
+  "D-18": {
+   "kind": "Decision",
+   "text": "The organiser gets a reminder before the start.",
+   "why": "Most no-shows are forgotten meetings."
+  },
+  "D-19": {
+   "kind": "Decision",
+   "text": "A meeting that ends early frees the room for the time that is left.",
+   "why": "Short meetings should give time back."
+  },
+  "D-20": {
+   "kind": "Decision",
+   "text": "A booking ends at its end time. The system asks nobody to leave.",
+   "why": "The product manages bookings, not people."
+  },
+  "D-21": {
+   "kind": "Decision",
+   "text": "The list of rooms shows what was free when the search ran, and says when that was. It is brought up to date only when the person searches again or loses a race for a room.",
+   "why": "Added in version 2. A list that changes under the finger causes wrong taps."
+  },
+  "D-22": {
+   "kind": "Decision",
+   "text": "Moving a booking keeps the same booking: its title and attendees carry over.",
+   "why": "Added in version 2. A move is not a cancel followed by a new booking."
+  },
+  "DF-01": {
+   "kind": "Deferred",
+   "text": "Bookings that repeat (a weekly series).",
+   "note": "Belongs to journey J06, which is not written. Until then every booking stands alone."
+  },
+  "J01": {
+   "kind": "Journey",
+   "text": "Book a room",
+   "note": "journeys/J01-book-a-room.md"
+  },
+  "AC-J01-01": {
+   "kind": "Acceptance criterion",
+   "text": "A search cannot start until the date, start time, length and number of people are given.",
+   "from": "D-04",
+   "journey": "J01"
+  },
+  "AC-J01-02": {
+   "kind": "Acceptance criterion",
+   "text": "Every room listed is large enough and free for the whole period asked for.",
+   "from": "D-02, D-04",
+   "journey": "J01"
+  },
+  "AC-J01-03": {
+   "kind": "Acceptance criterion",
+   "text": "When no room matches, \"Nothing free\" is shown with a way to change the criteria. No error is shown.",
+   "from": "D-05",
+   "journey": "J01"
+  },
+  "AC-J01-04": {
+   "kind": "Acceptance criterion",
+   "text": "Picking a room places a hold before the details step is shown.",
+   "from": "D-06",
+   "journey": "J01"
+  },
+  "AC-J01-05": {
+   "kind": "Acceptance criterion",
+   "text": "While a hold lasts, nobody else is offered that room for an overlapping period.",
+   "from": "D-07",
+   "journey": "J01"
+  },
+  "AC-J01-06": {
+   "kind": "Acceptance criterion",
+   "text": "If the room was taken first, the person is returned to the list, brought up to date, and told the room has just been taken.",
+   "from": "D-09",
+   "journey": "J01"
+  },
+  "AC-J01-07": {
+   "kind": "Acceptance criterion",
+   "text": "The details step shows how much of the hold period is left.",
+   "from": "D-08, PN-01",
+   "journey": "J01"
+  },
+  "AC-J01-08": {
+   "kind": "Acceptance criterion",
+   "text": "When the hold period ends without confirmation, the hold is gone, the person is told, and nothing was booked.",
+   "from": "D-08",
+   "journey": "J01"
+  },
+  "AC-J01-09": {
+   "kind": "Acceptance criterion",
+   "text": "Confirming creates exactly one booking, however many times the person presses.",
+   "from": "D-02, D-10",
+   "journey": "J01"
+  },
+  "AC-J01-10": {
+   "kind": "Acceptance criterion",
+   "text": "Leaving the details step releases the hold at once.",
+   "from": "D-11",
+   "journey": "J01"
+  },
+  "AC-J01-11": {
+   "kind": "Acceptance criterion",
+   "text": "If confirming fails, the person can try again for as long as the hold lasts.",
+   "from": "D-08, D-10",
+   "note": "Does not say what happens when no answer comes back at all: Q-01.",
+   "journey": "J01"
+  },
+  "AC-J01-12": {
+   "kind": "Acceptance criterion",
+   "text": "After confirming, the booking is listed for the organiser as upcoming.",
+   "from": "D-10",
+   "journey": "J01"
+  },
+  "AC-J01-13": {
+   "kind": "Acceptance criterion",
+   "text": "No wording shown to the person calls a hold a booking.",
+   "from": "D-10",
+   "note": "Wording rule.",
+   "journey": "J01"
+  },
+  "AC-J01-14": {
+   "kind": "Acceptance criterion",
+   "text": "The list of rooms says when it was fetched.",
+   "from": "D-21",
+   "note": "Added in version 2.",
+   "journey": "J01"
+  },
+  "J02": {
+   "kind": "Journey",
+   "text": "Manage a booking",
+   "note": "journeys/J02-manage-a-booking.md"
+  },
+  "AC-J02-01": {
+   "kind": "Acceptance criterion",
+   "text": "Only the organiser is offered \"Change\" and \"Cancel\" on a booking.",
+   "from": "D-12, D-13",
+   "journey": "J02"
+  },
+  "AC-J02-02": {
+   "kind": "Acceptance criterion",
+   "text": "Changing opens a search filled in with the booking's current date, time, length and number of people.",
+   "from": "D-04, D-12",
+   "journey": "J02"
+  },
+  "AC-J02-03": {
+   "kind": "Acceptance criterion",
+   "text": "The original room and period stay booked until the new ones are confirmed.",
+   "from": "D-12",
+   "journey": "J02"
+  },
+  "AC-J02-04": {
+   "kind": "Acceptance criterion",
+   "text": "When the new room and period are confirmed, the original ones are free at once, and the booking keeps its title and attendees.",
+   "from": "D-12, D-22",
+   "note": "Reworded in version 2 to name what carries over.",
+   "journey": "J02"
+  },
+  "AC-J02-05": {
+   "kind": "Acceptance criterion",
+   "text": "If the hold on the new room and period ends or is released, the booking is as it was.",
+   "from": "D-08, D-11, D-12",
+   "journey": "J02"
+  },
+  "AC-J02-06": {
+   "kind": "Acceptance criterion",
+   "text": "Cancelling asks for confirmation and names the meeting.",
+   "from": "D-14",
+   "journey": "J02"
+  },
+  "AC-J02-07": {
+   "kind": "Acceptance criterion",
+   "text": "After a cancellation the room is offered to others for that period.",
+   "from": "D-13",
+   "journey": "J02"
+  },
+  "AC-J02-08": {
+   "kind": "Acceptance criterion",
+   "text": "Check-in is offered from the start of the check-in window, at the room and from the booking.",
+   "from": "D-15, PN-02",
+   "journey": "J02"
+  },
+  "AC-J02-09": {
+   "kind": "Acceptance criterion",
+   "text": "A booking with no check-in by the end of the grace period is released, and the organiser is told.",
+   "from": "D-16, D-17, PN-03",
+   "note": "The grace period has no value yet: Q-03.",
+   "journey": "J02"
+  },
+  "AC-J02-10": {
+   "kind": "Acceptance criterion",
+   "text": "A reminder reaches the organiser before the start.",
+   "from": "D-18",
+   "journey": "J02"
+  },
+  "AC-J02-11": {
+   "kind": "Acceptance criterion",
+   "text": "Ending a meeting early frees the room for the time that is left.",
+   "from": "D-19",
+   "note": "Does not say who or what ends it.",
+   "journey": "J02"
+  },
+  "AC-J02-12": {
+   "kind": "Acceptance criterion",
+   "text": "At the end time the booking ends. Nobody is prompted to leave.",
+   "from": "D-20",
+   "journey": "J02"
+  },
+  "AF-01": {
+   "kind": "Architecture follow-up",
+   "text": "Holds and bookings for a room must be decided in one place, so that two requests for the same room and period cannot both succeed.",
+   "note": "D-02, D-07, D-09 · Status: open"
+  },
+  "AF-02": {
+   "kind": "Architecture follow-up",
+   "text": "Confirming must be safe to repeat: sending the same confirmation twice creates one booking, and the sender can find out afterwards whether it was recorded.",
+   "note": "D-02, D-10 · Status: open"
+  },
+  "AF-03": {
+   "kind": "Architecture follow-up",
+   "text": "Hold expiry and no-show release must run on the service's clock, not on a person's device.",
+   "note": "D-08, D-16 · Status: open"
+  },
+  "PN-01": {
+   "kind": "Policy parameter",
+   "text": "Hold period: how long a hold lasts without being confirmed.",
+   "note": "5 minutes · D-08"
+  },
+  "PN-02": {
+   "kind": "Policy parameter",
+   "text": "Check-in window: how long before the start check-in opens.",
+   "note": "10 minutes · D-15"
+  },
+  "PN-03": {
+   "kind": "Policy parameter",
+   "text": "Grace period: how long after the start a booking waits for check-in before it is released.",
+   "note": "No value yet (Q-03) · D-16"
+  }
+ },
+ "record": {
+  "extractedAt": "2026-11-27T16:28:15.573Z",
+  "journeys": [
+   {
+    "id": "J01",
+    "title": "Book a room",
+    "file": "journeys/J01-book-a-room.md"
+   },
+   {
+    "id": "J02",
+    "title": "Manage a booking",
+    "file": "journeys/J02-manage-a-booking.md"
+   }
+  ],
+  "archive": {
+   "folder": "workspace/spec/",
+   "files": [
+    {
+     "file": "DECISION_REGISTER.md",
+     "sha256": "e510ffad1f88220aecda31625c264d1355d48c23466c82b6e8bbaed2666e857a",
+     "bytes": 3902
+    },
+    {
+     "file": "journeys/J01-book-a-room.md",
+     "sha256": "8bf652fdd34d714a3d65cd3a42f8cebaf0ef9ae5c39fad69986494ac2477bc71",
+     "bytes": 1889
+    },
+    {
+     "file": "journeys/J02-manage-a-booking.md",
+     "sha256": "1c8c53b84e32671967d43ab5ea06d8e4a920ff915c6428b7210338182b46b5fe",
+     "bytes": 1770
+    },
+    {
+     "file": "ARCHITECTURE_FOLLOW_UPS.md",
+     "sha256": "72452113465d899cd1e552f88e6725e533327d0eaa14ee106a4844d7c719f110",
+     "bytes": 747
+    },
+    {
+     "file": "OPEN_QUESTIONS.md",
+     "sha256": "0e95a13b768fc0e40bfc380d83c48c86fc9ec096c99954d9b001444b7c2e21ff",
+     "bytes": 833
+    },
+    {
+     "file": "POLICY_PARAMETERS.md",
+     "sha256": "ae5a2f59d00817144012ef3ec27d3921bd9d4ecd81598ed238b18cd3c31786b1",
+     "bytes": 522
+    }
+   ]
+  },
+  "summary": {
+   "decisions": 22,
+   "criteria J01": 14,
+   "criteria J02": 12,
+   "parameters": 3,
+   "releasePriorities": 0,
+   "architecture": 3,
+   "evaluation": 0,
+   "deferred": 1,
+   "superseded": 0
+  }
+ }
+}
